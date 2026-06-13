@@ -1,7 +1,8 @@
-# [Practice Name] Psychology Website
+# Balance & Connect Psychology Website
 
-A polished, responsive static website for a psychology practice supporting expats,
-international families, and third-culture children in the Netherlands.
+A polished, responsive static website for Tessa van der Meiden’s independent psychology
+practice, supporting expats, international families, and young children growing up
+between cultures in the Netherlands.
 
 The site uses plain HTML, CSS, and a small amount of JavaScript. It has no build step,
 framework, database, or backend, and is ready to host on GitHub Pages.
@@ -59,8 +60,6 @@ to the fallback email link.
 
 Search all files for square brackets (`[` and `]`) and update:
 
-- `[Practice Name]`
-- `[Psychologist Name]`
 - `[Degree and professional credentials]`
 - `[Professional body and registration number]`
 - `[Add other languages]`
@@ -83,7 +82,7 @@ To add a portrait, replace the `.portrait-placeholder` block in `index.html` wit
 <img
   class="professional-portrait"
   src="portrait.jpg"
-  alt="[Psychologist Name], psychologist at [Practice Name]"
+  alt="Tessa van der Meiden, psychologist at Balance & Connect"
   width="900"
   height="1200"
 >
