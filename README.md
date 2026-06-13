@@ -13,6 +13,10 @@ framework, database, or backend, and is ready to host on GitHub Pages.
 - `styles.css` - complete responsive design system and layout
 - `script.js` - mobile navigation, subtle reveal effects, active navigation, and Tally embed loading
 - `assets/tessa-van-der-meiden.jpeg` - Tessa’s website portrait
+- `assets/logo-mark.png` and `assets/logo-lockup.png` - transparent brand assets
+- `assets/favicon-48.png`, `apple-touch-icon.png`, `icon-192.png`, and `icon-512.png` - site icons
+- `assets/social-preview.png` - 1200 x 630 social sharing image
+- `site.webmanifest` - browser and home-screen metadata
 - `README.md` - setup and deployment instructions
 
 ## Preview locally
@@ -82,14 +86,29 @@ In the `<head>` of `index.html`, update:
 - Open Graph title, description, URL, site name, and image
 - Twitter title, description, and image
 
-The placeholder social image URL is:
+The social image is stored at `assets/social-preview.png`. After connecting the final
+domain, its metadata URL should be:
 
 ```text
-https://www.your-domain.nl/social-preview.jpg
+https://www.your-domain.nl/assets/social-preview.png
 ```
 
-Create a social preview image around 1200 x 630 pixels and add it to the project root.
-Then use its final absolute URL in the metadata.
+Replace `https://www.your-domain.nl/` in the Open Graph, Twitter, canonical, and
+structured-data URLs with the final public domain.
+
+## Brand assets
+
+The website palette is based on the supplied logo:
+
+- Brand blue: `#38B6FF`
+- Cool pearl background: `#F3F5F9`
+- Accessible dark blue accent: `#087DBD`
+- Deep navy: `#0B2940`
+
+The header and footer use `assets/logo-mark.png`. Favicons and home-screen icons are
+linked in `index.html` and `site.webmanifest`. When the logo changes, regenerate these
+derived assets together so browser tabs, search results, and social sharing remain
+consistent.
 
 Also update the domain, email, and telephone placeholders in the JSON-LD structured data.
 The practice name, location, languages, audience, session fee, and psychologist details
