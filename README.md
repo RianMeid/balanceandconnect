@@ -67,7 +67,7 @@ Search all files for square brackets (`[` and `]`) and update:
 
 Also replace:
 
-- `hello@your-domain.nl`
+- `info@balanceandconnect.nl`
 - `+31-00-000-0000`
 - Footer links for privacy, terms, complaints, and professional registration
 - The NIP registration comment in `index.html` once the details are confirmed
