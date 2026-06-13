@@ -1,11 +1,11 @@
 {
-  "name": "Balance & Connect",
-  "short_name": "Balance & Connect",
+  "name": "Balance and Connect",
+  "short_name": "Balance and Connect",
   "description": "Online psychological counselling for international teenagers and adults.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f3f5f9",
-  "theme_color": "#f3f5f9",
+  "background_color": "#f7f3ec",
+  "theme_color": "#f7f3ec",
   "icons": [
     {
       "src": "assets/icon-192.png",

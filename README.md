@@ -1,4 +1,4 @@
-# Balance & Connect Psychology Website
+# Balance and Connect Psychology Website
 
 A polished, responsive static website for Tessa van der Meiden’s independent psychology
 practice, providing online counselling for expats, international families, teenagers
@@ -98,12 +98,13 @@ structured-data URLs with the final public domain.
 
 ## Brand assets
 
-The website palette is based on the supplied logo:
+The website keeps its calm original palette while using the supplied blue logo:
 
-- Brand blue: `#38B6FF`
-- Cool pearl background: `#F3F5F9`
-- Accessible dark blue accent: `#087DBD`
-- Deep navy: `#0B2940`
+- Logo blue: `#38B6FF`
+- Warm off-white: `#F7F3EC`
+- Muted sage: `#82968A`
+- Terracotta accent: `#BB7159`
+- Deep green: `#263E38`
 
 The header and footer use `assets/logo-mark.png`. Favicons and home-screen icons are
 linked in `index.html` and `site.webmanifest`. When the logo changes, regenerate these
