@@ -5,8 +5,6 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const navigation = document.querySelector("[data-nav]");
 const navigationLinks = navigation?.querySelectorAll('a[href^="#"]') ?? [];
 const yearElement = document.querySelector("[data-year]");
-const contactForm = document.querySelector("[data-contact-form]");
-const formStatus = document.querySelector("[data-form-status]");
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
@@ -84,80 +82,27 @@ if ("IntersectionObserver" in window && sections.length) {
   sections.forEach((section) => sectionObserver.observe(section));
 }
 
-const validationMessages = {
-  name: "Please enter your name.",
-  email: "Please enter a valid email address.",
-  support_for: "Please select who you are seeking support for.",
-  message: "Please add a short message.",
-  consent: "Please confirm that you consent to being contacted."
-};
-
-const getField = (name) => contactForm?.elements.namedItem(name);
-
-const setFieldError = (name, message = "") => {
-  const field = getField(name);
-  const error = document.getElementById(`${name}-error`);
-
-  if (error) error.textContent = message;
-
-  if (field instanceof RadioNodeList) {
-    Array.from(field).forEach((input) => {
-      input.setAttribute("aria-invalid", String(Boolean(message)));
-      input.setAttribute("aria-describedby", `${name}-error`);
-    });
-  } else if (field instanceof HTMLElement) {
-    field.setAttribute("aria-invalid", String(Boolean(message)));
-    field.setAttribute("aria-describedby", `${name}-error`);
-  }
-};
-
-const validateField = (name) => {
-  const field = getField(name);
-  let isValid = true;
-
-  if (field instanceof RadioNodeList) {
-    isValid = Boolean(field.value);
-  } else if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
-    isValid = field.type === "checkbox" ? field.checked : field.checkValidity();
-  }
-
-  setFieldError(name, isValid ? "" : validationMessages[name]);
-  return isValid;
-};
-
-["name", "email", "message", "consent"].forEach((name) => {
-  const field = getField(name);
-  field?.addEventListener("blur", () => validateField(name));
-  field?.addEventListener("input", () => {
-    if (field.getAttribute("aria-invalid") === "true") validateField(name);
-  });
-});
-
-const supportFields = getField("support_for");
-if (supportFields instanceof RadioNodeList) {
-  Array.from(supportFields).forEach((input) => {
-    input.addEventListener("change", () => validateField("support_for"));
-  });
-}
-
-contactForm?.addEventListener("submit", (event) => {
-  const fieldsToValidate = ["name", "email", "support_for", "message", "consent"];
-  const isValid = fieldsToValidate.map(validateField).every(Boolean);
-  const isPlaceholderAction = contactForm.action.includes("YOUR_FORM_ID");
-
-  if (!isValid || isPlaceholderAction) {
-    event.preventDefault();
-  }
-
-  if (!isValid) {
-    const firstInvalid = contactForm.querySelector('[aria-invalid="true"]');
-    firstInvalid?.focus();
+const loadTallyEmbeds = () => {
+  if (typeof Tally !== "undefined") {
+    Tally.loadEmbeds();
     return;
   }
 
-  if (isPlaceholderAction && formStatus) {
-    formStatus.textContent =
-      "The form is ready, but the Formspree ID still needs to be added. Please use the email link below for now.";
-    formStatus.classList.add("is-visible", "is-error");
-  }
-});
+  document
+    .querySelectorAll("iframe[data-tally-src]:not([src])")
+    .forEach((iframe) => {
+      iframe.src = iframe.dataset.tallySrc;
+    });
+};
+
+const tallyScriptUrl = "https://tally.so/widgets/embed.js";
+
+if (typeof Tally !== "undefined") {
+  loadTallyEmbeds();
+} else if (!document.querySelector(`script[src="${tallyScriptUrl}"]`)) {
+  const tallyScript = document.createElement("script");
+  tallyScript.src = tallyScriptUrl;
+  tallyScript.onload = loadTallyEmbeds;
+  tallyScript.onerror = loadTallyEmbeds;
+  document.body.appendChild(tallyScript);
+}

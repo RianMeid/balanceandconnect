@@ -1,8 +1,8 @@
 # Balance & Connect Psychology Website
 
 A polished, responsive static website for Tessa van der Meiden’s independent psychology
-practice, supporting expats, international families, and young children growing up
-between cultures in the Netherlands.
+practice, providing online counselling for expats, international families, teenagers
+aged 12+, and adults in English and Dutch.
 
 The site uses plain HTML, CSS, and a small amount of JavaScript. It has no build step,
 framework, database, or backend, and is ready to host on GitHub Pages.
@@ -11,7 +11,8 @@ framework, database, or backend, and is ready to host on GitHub Pages.
 
 - `index.html` - page content, metadata, structured data, and contact form
 - `styles.css` - complete responsive design system and layout
-- `script.js` - mobile navigation, subtle reveal effects, active navigation, and form validation
+- `script.js` - mobile navigation, subtle reveal effects, active navigation, and Tally embed loading
+- `assets/tessa-van-der-meiden.jpeg` - Tessa’s website portrait
 - `README.md` - setup and deployment instructions
 
 ## Preview locally
@@ -27,7 +28,7 @@ Then visit `http://localhost:8000`.
 
 ## Deploy to GitHub Pages
 
-1. Create a GitHub repository and add these four files at the repository root.
+1. Create a GitHub repository and add all project files, including the `assets` folder.
 2. Push the repository to GitHub.
 3. In the GitHub repository, open **Settings > Pages**.
 4. Under **Build and deployment**, select **Deploy from a branch**.
@@ -40,56 +41,36 @@ a GitHub Pages project subfolder.
 
 ## Connect the contact form
 
-The form is prepared for [Formspree](https://formspree.io/):
+The contact section uses this [Tally](https://tally.so/) form:
 
-1. Create a Formspree account and a new form.
-2. Copy the form endpoint or form ID.
-3. In `index.html`, find:
-
-```html
-action="https://formspree.io/f/YOUR_FORM_ID"
+```text
+https://tally.so/r/yP7v5X
 ```
 
-4. Replace `YOUR_FORM_ID` with the ID provided by Formspree.
-5. Submit a test enquiry and confirm the email address in Formspree if requested.
+The responsive embed is already configured in `index.html`, and Tally’s embed script is
+loaded near the end of the page. The direct email link and a no-JavaScript link to Tally
+remain available as fallbacks.
 
-Until a real ID is added, JavaScript prevents accidental submission and points visitors
-to the fallback email link.
+If the Tally form changes, replace `yP7v5X` in both the embedded form URL and the
+no-JavaScript fallback URL. Configure notifications, consent wording, and submission
+handling in the Tally dashboard.
 
 ## Replace the placeholders
 
 Search all files for square brackets (`[` and `]`) and update:
 
-- `[Degree and professional credentials]`
-- `[Professional body and registration number]`
-- `[Add other languages]`
-- `[Street and number]`
-- `[Postcode]` and `[City]`
-- `[two working days]`
+- Any future editable content placeholders you add
 
 Also replace:
 
 - `hello@your-domain.nl`
 - `+31-00-000-0000`
-- LinkedIn profile URL
-- Fees, insurance arrangements, session format, and cancellation terms
 - Footer links for privacy, terms, complaints, and professional registration
+- The NIP registration comment in `index.html` once the details are confirmed
 
-To add a portrait, replace the `.portrait-placeholder` block in `index.html` with an
-`img` element. Keep meaningful alt text:
-
-```html
-<img
-  class="professional-portrait"
-  src="portrait.jpg"
-  alt="Tessa van der Meiden, psychologist at Balance & Connect"
-  width="900"
-  height="1200"
->
-```
-
-Add styling for the image or reuse the existing placeholder dimensions and border radius.
-Compress photographs to WebP or AVIF where practical.
+Tessa’s portrait is stored at `assets/tessa-van-der-meiden.jpeg`. To replace it, use the
+same file name or update the image path, width, and height in `index.html`. Keep the
+existing descriptive alt text and compress any replacement photograph for the web.
 
 ## Update SEO and social sharing
 
@@ -110,9 +91,10 @@ https://www.your-domain.nl/social-preview.jpg
 Create a social preview image around 1200 x 630 pixels and add it to the project root.
 Then use its final absolute URL in the metadata.
 
-Also update every placeholder in the JSON-LD structured data, including the practice
-name, domain, email, telephone, address, languages, and psychologist details. Test the
-result with Google's Rich Results Test after publishing.
+Also update the domain, email, and telephone placeholders in the JSON-LD structured data.
+The practice name, location, languages, audience, session fee, and psychologist details
+already reflect the supplied information. Test the result with Google’s Rich Results Test
+after publishing.
 
 ## Analytics
 
@@ -147,7 +129,7 @@ containing only the custom domain.
 
 ## Accessibility and performance
 
-The site includes semantic landmarks, a skip link, visible keyboard focus, labelled form
-controls, reduced-motion support, responsive layouts, and accessible mobile navigation.
-The decorative hero artwork is CSS-only, so it adds no image download. Google Fonts are
+The site includes semantic landmarks, a skip link, visible keyboard focus, a titled form
+embed, reduced-motion support, responsive layouts, and accessible mobile navigation. The
+decorative hero artwork is CSS-only, so it adds no image download. Google Fonts are
 optional; remove the font links in `index.html` to use the system font fallbacks only.
