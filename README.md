@@ -72,6 +72,8 @@ Also replace:
 - Footer links for privacy, terms, complaints, and professional registration
 - The NIP registration comment in `index.html` once the details are confirmed
 
+The registered KvK number is `42067316`.
+
 Tessa’s portrait is stored at `assets/tessa-van-der-meiden.jpeg`. To replace it, use the
 same file name or update the image path, width, and height in `index.html`. Keep the
 existing descriptive alt text and compress any replacement photograph for the web.
