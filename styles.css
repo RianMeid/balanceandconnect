@@ -1390,6 +1390,10 @@ p {
     padding-block: 100px;
   }
 
+  .site-header.is-scrolled {
+    backdrop-filter: none;
+  }
+
   .menu-toggle {
     position: relative;
     z-index: 102;
