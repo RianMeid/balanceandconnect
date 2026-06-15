@@ -65,12 +65,10 @@ Search all files for square brackets (`[` and `]`) and update:
 
 - Any future editable content placeholders you add
 
-Also replace:
+Also update:
 
-- `info@balanceandconnect.nl`
-- `+31-00-000-0000`
-- Footer links for privacy, terms, complaints, and professional registration
 - The NIP registration comment in `index.html` once the details are confirmed
+- Any professional, privacy, complaints, or contact information that changes
 
 The registered KvK number is `42067316`.
 
@@ -80,7 +78,8 @@ existing descriptive alt text and compress any replacement photograph for the we
 
 ## Update SEO and social sharing
 
-In the `<head>` of `index.html`, update:
+The production domain is `https://balanceandconnect.nl/`. If the domain changes,
+update these fields in the `<head>` of `index.html`:
 
 - Page `<title>`
 - Meta description
@@ -88,15 +87,36 @@ In the `<head>` of `index.html`, update:
 - Open Graph title, description, URL, site name, and image
 - Twitter title, description, and image
 
-The social image is stored at `assets/social-preview.png`. After connecting the final
-domain, its metadata URL should be:
+The social image is stored at `assets/social-preview.png`. Its production URL is:
 
 ```text
-https://www.your-domain.nl/assets/social-preview.png
+https://balanceandconnect.nl/assets/social-preview.png
 ```
 
-Replace `https://www.your-domain.nl/` in the Open Graph, Twitter, canonical, and
-structured-data URLs with the final public domain.
+Keep the Open Graph, Twitter, canonical, hreflang, sitemap, and structured-data
+URLs aligned with the same preferred HTTPS domain.
+
+## Search indexing
+
+The repository includes:
+
+- `robots.txt`, which permits crawling and points search engines to the sitemap
+- `sitemap.xml`, which lists the single canonical page
+- Canonical, Open Graph, Twitter, and JSON-LD structured metadata in `index.html`
+
+After every production deployment:
+
+1. Add `https://balanceandconnect.nl/` as a Domain property in Google Search Console.
+2. Verify domain ownership with the DNS TXT record provided by Google.
+3. Submit `https://balanceandconnect.nl/sitemap.xml` in Search Console.
+4. Inspect `https://balanceandconnect.nl/` and request indexing after important updates.
+5. Connect the same site to Bing Webmaster Tools and submit the sitemap there.
+6. Monitor real search queries, impressions, click-through rate, indexing, Core Web
+   Vitals, and incoming links before changing page copy again.
+
+For local visibility, only create a Google Business Profile if the practice meets
+Google's eligibility rules for a customer-facing location or in-person service-area
+business. An online-only practice is not eligible solely because it is based in a city.
 
 ## Brand assets
 
@@ -113,10 +133,9 @@ linked in `index.html` and `site.webmanifest`. When the logo changes, regenerate
 derived assets together so browser tabs, search results, and social sharing remain
 consistent.
 
-Also update the domain, email, and telephone placeholders in the JSON-LD structured data.
 The practice name, location, languages, audience, session fee, and psychologist details
-already reflect the supplied information. Test the result with Google’s Rich Results Test
-after publishing.
+are reflected in the JSON-LD structured data. Test the result with Schema.org's validator
+and Google's Rich Results Test after publishing.
 
 ## Analytics
 
@@ -135,7 +154,8 @@ statement and consent setup where needed.
      `your-username.github.io`.
    - For an apex domain, use GitHub's current `A` and `AAAA` records.
 5. Wait for DNS to update, then enable **Enforce HTTPS** in GitHub Pages.
-6. Replace all `https://www.your-domain.nl/` placeholders in `index.html`.
+6. If the domain changes, update the canonical, social, structured-data,
+   `robots.txt`, and `sitemap.xml` URLs together.
 
 GitHub may create a `CNAME` file automatically. If it does not, add a file named `CNAME`
 containing only the custom domain.

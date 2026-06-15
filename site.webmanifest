@@ -1,7 +1,7 @@
 {
   "name": "Balance and Connect",
   "short_name": "Balance and Connect",
-  "description": "Online psychological counselling for international teenagers and adults.",
+  "description": "English and Dutch online counselling for expats, international teenagers aged 12+ and adults, based in The Hague.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f7f3ec",
