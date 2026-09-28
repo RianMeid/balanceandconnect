@@ -12,7 +12,7 @@ framework, database, or backend, and is ready to host on GitHub Pages.
 - `index.html` - page content, metadata, structured data, and contact form
 - `styles.css` - complete responsive design system and layout
 - `script.js` - mobile navigation, subtle reveal effects, active navigation, and Tally embed loading
-- `assets/tessa-van-der-meiden.jpeg` - Tessa’s website portrait
+- `assets/tessa-van-der-meiden-new.jpeg` - Tessa’s website portrait
 - `assets/logo-mark.png` and `assets/logo-lockup.png` - transparent brand assets
 - `assets/favicon-48.png`, `apple-touch-icon.png`, `icon-192.png`, and `icon-512.png` - site icons
 - `assets/social-preview.png` - 1200 x 630 social sharing image
@@ -67,12 +67,11 @@ Search all files for square brackets (`[` and `]`) and update:
 
 Also update:
 
-- The NIP registration comment in `index.html` once the details are confirmed
 - Any professional, privacy, complaints, or contact information that changes
 
 The registered KvK number is `42067316`.
 
-Tessa’s portrait is stored at `assets/tessa-van-der-meiden.jpeg`. To replace it, use the
+Tessa’s portrait is stored at `assets/tessa-van-der-meiden-new.jpeg`. To replace it, use the
 same file name or update the image path, width, and height in `index.html`. Keep the
 existing descriptive alt text and compress any replacement photograph for the web.
 
@@ -120,15 +119,15 @@ business. An online-only practice is not eligible solely because it is based in 
 
 ## Brand assets
 
-The website keeps its calm original palette while using the supplied blue logo:
+The website uses its dark sage green for the header and footer logo:
 
-- Logo blue: `#38B6FF`
+- Logo dark sage green: `#2F4A43`
 - Warm off-white: `#F7F3EC`
 - Muted sage: `#82968A`
 - Terracotta accent: `#BB7159`
 - Deep green: `#263E38`
 
-The header and footer use `assets/logo-mark.png`. Favicons and home-screen icons are
+The header and footer use `assets/logo-mark-sage.svg`, which embeds the original logo with an exact dark sage colour filter. Favicons and home-screen icons are
 linked in `index.html` and `site.webmanifest`. When the logo changes, regenerate these
 derived assets together so browser tabs, search results, and social sharing remain
 consistent.
