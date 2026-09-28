@@ -127,7 +127,7 @@ The website uses its dark sage green for the header and footer logo:
 - Terracotta accent: `#BB7159`
 - Deep green: `#263E38`
 
-The header and footer use `assets/logo-mark-sage.svg`, which embeds the original logo with an exact dark sage colour filter. Favicons and home-screen icons are
+The header and footer use `assets/logo-mark-sage.svg`, which uses vector paths traced from the original logo in dark sage green. Favicons and home-screen icons are
 linked in `index.html` and `site.webmanifest`. When the logo changes, regenerate these
 derived assets together so browser tabs, search results, and social sharing remain
 consistent.
